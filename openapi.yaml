@@ -102,6 +102,7 @@ components:
           description: place of departure id
           type: string
           example: "2"
+        placeOfDestination:
           description: place of destination id
           type: string
           example: "3"
