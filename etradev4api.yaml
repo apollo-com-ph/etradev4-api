@@ -145,34 +145,10 @@ components:
     InvalidRequestBody:
         type: object
         properties:
-          registryNo:
-            description: unique registry number from request body
-            type: string
-            example: "123456"
-          flightNo:
-            description: flight number from request body
-            type: string
-            example: "FL123"
-          customsOffice:
-            description: customs office id from request body
-            type: string
-            example: "1"
-          masterAwb:
-            description: unique masterawb
-            type: string
-            example: "AWB123456789"
-          placeOfDeparture:
-            description: place of departure id from request body
-            type: string
-            example: "2"
-          placeOfDestination:
-            description: place of destination id from request body
-            type: string
-            example: "3"
-          paymentAccount:
-            description: payment account id from request body
-            type: string
-            example: "4"
+          request_body:
+            type: array
+            items:
+              $ref: '#/components/schemas/CreateManifestResult'
           timestamp:
             description: timestamp
             type: string
