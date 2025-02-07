@@ -148,7 +148,7 @@ components:
           request_body:
             type: array
             items:
-              $ref: '#/components/schemas/CreateManifestResult'
+              $ref: '#/components/schemas/CreateManifestRequest'
           timestamp:
             description: timestamp
             type: string
