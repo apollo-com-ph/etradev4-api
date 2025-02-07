@@ -43,6 +43,7 @@ paths:
           description: Unauthorized Request
         '409':
           description:  request conflicts with the current state of the server
+  /get_manifest:
     get:
       tags:
         - manifest
@@ -141,3 +142,38 @@ components:
         - placeOfDeparture
         - placeOfDestination
         - paymentAccount
+    InvalidRequestBody:
+        type: object
+        properties:
+          registryNo:
+            type: string
+            description: registryNo from the request body
+            example: "123456"
+          timestamp:
+            description: timestamp
+            type: string
+            format: date-time
+          code:
+            type: string
+            description: returnCode
+            example: "400"
+          message:
+            type: string
+            description: human readable message
+            example: "Invalid Request Body"
+    PaginatedManifestsResult:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateManifestResult'
+        page:
+          type: integer
+          example: 1
+        pageSize:
+          type: integer
+          example: 10
+        hasNextPage:
+          type: boolean
+          example: true
