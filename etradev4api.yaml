@@ -11,7 +11,7 @@ servers:
     description: production
 tags:
   - name: manifest
-    description: Everything about Manifest
+    description: Everything about Manifest /api/{manifesttype}/..
 paths:
   /create:
     post:
