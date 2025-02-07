@@ -43,6 +43,75 @@ paths:
           description: Unauthorized Request
         '409':
           description:  request conflicts with the current state of the server
+  /update_manifest/${id}:
+    post:
+      tags:
+        - manifest
+      summary: Update manifest(AF, AL, SF, SL)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: manifest id
+          schema:
+            type : string
+      description: |-
+        Called during clicking update manifest button
+      operationId: manifest_update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateManifestRequest'
+      responses:
+        '201':
+          description: Manifest successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateManifestResult'
+        '400':
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestBody'
+        '401':
+          description: Unauthorized Request
+        '409':
+          description:  request conflicts with the current state of the server
+  /get_manifest/${id}:
+    post:
+      tags:
+        - manifest
+      summary: Update manifest(AF, AL, SF, SL)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: manifest id
+          schema:
+            type : string
+      description: |-
+        Called during clicking update manifest button
+      operationId: manifest_update
+      responses:
+        '201':
+          description: Manifest successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateManifestRequest'
+        '400':
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestBody'
+        '401':
+          description: Unauthorized Request
+        '409':
+          description:  request conflicts with the current state of the server
   /get_manifest:
     get:
       tags:
@@ -130,6 +199,72 @@ components:
           type: string
           description: human readable message
           example: "Manifest Successfully Created"
+        date_created:
+          description: timestamp
+          type: string
+          format: date-time
+      required:
+        - registryNo
+        - flightNo
+        - customsOffice
+        - masterAwb
+        - placeOfDeparture
+        - placeOfDestination
+        - paymentAccount
+    UpdateManifestRequest:
+      type: object
+        properties:
+          id:
+            description: manifest id
+            type: string
+            example: "123456"
+          registryNo:
+            description: unique registry number
+            type: string
+            example: "123456"
+          flightNo:
+            description: flight number
+            type: string
+            example: "FL123"
+          customsOffice:
+            description: customs office id
+            type: string
+            example: "1"
+          masterAwb:
+            description: unique masterawb
+            type: string
+            example: "AWB123456789"
+          placeOfDeparture:
+            description: place of departure id
+            type: string
+            example: "2"
+          placeOfDestination:
+            description: place of destination id
+            type: string
+            example: "3"
+          paymentAccount:
+            description: payment account id
+            type: string
+            example: "4"
+    UpdateManifestResult:
+      type: object
+      properties:
+        registryNo:
+          description: unique registry number
+          type: string
+          example: "123456"
+        masterAwb:
+          description: unique masterawb
+          type: string
+          example: "AWB123456789"
+        statusCode:
+          type: string
+          description: return code
+          example: "200"
+        message:
+          type: string
+          description: human readable message
+          example: "Manifest Successfully Updated"
         date_created:
           description: timestamp
           type: string
