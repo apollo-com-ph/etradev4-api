@@ -81,7 +81,7 @@ paths:
         '409':
           description:  request conflicts with the current state of the server
   /manifests/${id}:
-    post:
+    get:
       tags:
         - manifest
       summary: Get a manifest(AF, AL, SF, SL)
