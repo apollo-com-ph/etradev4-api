@@ -213,39 +213,39 @@ components:
         - paymentAccount
     UpdateManifestRequest:
       type: object
-        properties:
-          id:
-            description: manifest id
-            type: string
-            example: "123456"
-          registryNo:
-            description: unique registry number
-            type: string
-            example: "123456"
-          flightNo:
-            description: flight number
-            type: string
-            example: "FL123"
-          customsOffice:
-            description: customs office id
-            type: string
-            example: "1"
-          masterAwb:
-            description: unique masterawb
-            type: string
-            example: "AWB123456789"
-          placeOfDeparture:
-            description: place of departure id
-            type: string
-            example: "2"
-          placeOfDestination:
-            description: place of destination id
-            type: string
-            example: "3"
-          paymentAccount:
-            description: payment account id
-            type: string
-            example: "4"
+      properties:
+        id:
+          description: manifest id
+          type: string
+          example: "123456"
+        registryNo:
+          description: unique registry number
+          type: string
+          example: "123456"
+        flightNo:
+          description: flight number
+          type: string
+          example: "FL123"
+        customsOffice:
+          description: customs office id
+          type: string
+          example: "1"
+        masterAwb:
+          description: unique masterawb
+          type: string
+          example: "AWB123456789"
+        placeOfDeparture:
+          description: place of departure id
+          type: string
+          example: "2"
+        placeOfDestination:
+          description: place of destination id
+          type: string
+          example: "3"
+        paymentAccount:
+          description: payment account id
+          type: string
+          example: "4"
     UpdateManifestResult:
       type: object
       properties:
