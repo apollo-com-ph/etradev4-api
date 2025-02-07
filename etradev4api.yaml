@@ -78,8 +78,8 @@ paths:
                 $ref: '#/components/schemas/InvalidRequestBody'
         '401':
           description: Unauthorized Request
-        '409':
-          description:  request conflicts with the current state of the server
+        '404':
+          description:  Manifest not found
   /manifests/${id}:
     get:
       tags:
