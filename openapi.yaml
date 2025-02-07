@@ -110,7 +110,7 @@ components:
           description: payment account id
           type: string
           example: "4"
-  CreateManifestResult:
+    CreateManifestResult:
       type: object
       properties:
         registryNo:
@@ -121,10 +121,6 @@ components:
           description: unique masterawb
           type: string
           example: "AWB123456789"
-        date_created:
-          description: timestamp
-          type: string
-          format: date-time
         statusCode:
           type: string
           description: return code
@@ -133,6 +129,10 @@ components:
           type: string
           description: human readable message
           example: "Manifest Successfully Created"
+        date_created:
+          description: timestamp
+          type: string
+          format: date-time
       required:
         - registryNo
         - flightNo
