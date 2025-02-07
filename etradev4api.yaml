@@ -13,7 +13,7 @@ tags:
   - name: manifest
     description: Everything about Manifest
 paths:
-  /create_manifest:
+  /create:
     post:
       tags:
         - manifest
@@ -43,7 +43,7 @@ paths:
           description: Unauthorized Request
         '409':
           description:  request conflicts with the current state of the server
-  /update_manifest/${id}:
+  /update/${id}:
     post:
       tags:
         - manifest
@@ -80,7 +80,7 @@ paths:
           description: Unauthorized Request
         '409':
           description:  request conflicts with the current state of the server
-  /get_manifest/${id}:
+  /manifests/${id}:
     post:
       tags:
         - manifest
@@ -106,7 +106,7 @@ paths:
           description: Unauthorized Request
         '404':
           description: Manifest not found
-  /get_manifest:
+  /manifests:
     get:
       tags:
         - manifest
