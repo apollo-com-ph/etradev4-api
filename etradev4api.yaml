@@ -167,7 +167,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/CreateManifestResult'
+            $ref: '#/components/schemas/CreateManifestRequest'
         page:
           type: integer
           example: 1
