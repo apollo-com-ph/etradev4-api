@@ -84,7 +84,7 @@ paths:
     post:
       tags:
         - manifest
-      summary: Update manifest(AF, AL, SF, SL)
+      summary: Get a manifest(AF, AL, SF, SL)
       parameters:
         - name: id
           in: path
@@ -93,15 +93,15 @@ paths:
           schema:
             type : string
       description: |-
-        Called during clicking update manifest button
-      operationId: manifest_update
+        Called during clicking view manifest button
+      operationId: manifest_get
       responses:
         '201':
-          description: Manifest successfully updated
+          description: Manifest successfully fetched
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UpdateManifestRequest'
+                $ref: '#/components/schemas/ManifestResult'
         '400':
           description: Invalid request body
           content:
@@ -312,3 +312,10 @@ components:
         hasNextPage:
           type: boolean
           example: true
+    ManifestResult:
+      type: object
+      properties:
+        manifest:
+          type: array
+          items:
+            $ref: '#/components/schemas/UpdateManifestRequest'
