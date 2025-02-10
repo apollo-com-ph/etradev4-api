@@ -282,7 +282,7 @@ components:
             description: timestamp
             type: string
             format: date-time
-          code:
+          statusCode:
             type: string
             description: returnCode
             example: "400"
